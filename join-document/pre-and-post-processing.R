@@ -5,11 +5,11 @@ library(sharpshootR)
 
 # SEKI
 x <- readOGR(dsn='l:/CA792/ca792_spatial/FG_CA792_OFFICIAL.gdb', layer='ca792_a')
-writeOGR(x, dsn='CA792', layer='ca792_official', driver = 'ESRI Shapefile', overwrite_layer = TRUE)
+writeOGR(x, dsn='s:/Service_Center/NRCS/Archive_Dylan_Beaudette/regional-projects/join-document-ideas/CA792', layer='ca792_official', driver = 'ESRI Shapefile', overwrite_layer = TRUE)
 
 # CA630
 x <- readOGR(dsn='l:/CA630/FG_CA630_OFFICIAL.gdb', layer='ca630_a')
-writeOGR(x, dsn='CA630', layer='ca630_official', driver = 'ESRI Shapefile', overwrite_layer = TRUE)
+writeOGR(x, dsn='s:/Service_Center/NRCS/Archive_Dylan_Beaudette/regional-projects/join-document-ideas/CA630', layer='ca630_official', driver = 'ESRI Shapefile', overwrite_layer = TRUE)
 
 
 ## send to PostGIS / GRASS for the hard stuff
@@ -18,7 +18,7 @@ writeOGR(x, dsn='CA630', layer='ca630_official', driver = 'ESRI Shapefile', over
 ## post-processing: generate a join decision / line segment ID
 
 # SEKI
-x <- readOGR(dsn='CA792', layer = 'join_lines', stringsAsFactors = FALSE)
+x <- readOGR(dsn='s:/Service_Center/NRCS/Archive_Dylan_Beaudette/regional-projects/join-document-ideas/CA792', layer = 'join_lines', stringsAsFactors = FALSE)
 # make a unique ID for joing decisions that should survive subsequent re-generation of the join document
 x$jd_id <- generateLineHash(x)
 # save new version to standard location
@@ -35,7 +35,7 @@ dev.off()
 
 
 # CA630
-x <- readOGR(dsn='CA630', layer = 'ca630_join_lines', stringsAsFactors = FALSE)
+x <- readOGR(dsn='s:/Service_Center/NRCS/Archive_Dylan_Beaudette/regional-projects/join-document-ideas/CA630', layer = 'ca630_join_lines', stringsAsFactors = FALSE)
 # make a unique ID for joing decisions that should survive subsequent re-generation of the join document
 x$jd_id <- generateLineHash(x)
 # save new version to standard location

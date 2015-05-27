@@ -1,7 +1,7 @@
 -- 
 
 -- load data
-shp2pgsql -s 4326 -c -g wkb_geometry -I ca792_official.shx ca792 | psql -U postgres ssurgo_combined
+shp2pgsql -s 4326 -c -g wkb_geometry -I ca792_official.shp ca792 | psql -U postgres ssurgo_combined
 
 -- set path
 \timing
