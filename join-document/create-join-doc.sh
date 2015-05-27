@@ -1,6 +1,8 @@
 #!/bin/bash
 set -x
 
+## NOTE: this only works when run interactively
+
 ## native coordinate system of source data: usually UTM z10 or z11 NAD83
 ## "left-hand" data are the new data
 ## "right-hand" data are SSURGO
@@ -8,6 +10,7 @@ set -x
 # ssurgo-new_data-union
 new=$1
 prefix=$2
+
 # threshold in meters
 thresh=10
 
