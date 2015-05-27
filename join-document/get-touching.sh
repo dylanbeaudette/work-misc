@@ -1,3 +1,8 @@
+## 2015-05-27: 
+# no results are returned in places where the initial mapping overlaps or doesn't touch SSURGO
+# this happens in CA630 due to boundary problems
+# islands of SSURGO no longer cause problems
+
 
 # example:
 # sh get-touching.sh ca792_official.shp CA792 26911

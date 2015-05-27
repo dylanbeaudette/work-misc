@@ -1,3 +1,6 @@
+
+## TODO: join ID hash should include left/right map unit symbols
+
 library(rgdal)
 library(sharpshootR)
 
@@ -35,7 +38,7 @@ dev.off()
 
 
 # CA630
-x <- readOGR(dsn='s:/Service_Center/NRCS/Archive_Dylan_Beaudette/regional-projects/join-document-ideas/CA630', layer = 'ca630_join_lines', stringsAsFactors = FALSE)
+x <- readOGR(dsn='l:/CA630/join-document', layer = 'ca630_join_lines', stringsAsFactors = FALSE)
 # make a unique ID for joing decisions that should survive subsequent re-generation of the join document
 x$jd_id <- generateLineHash(x)
 # save new version to standard location
