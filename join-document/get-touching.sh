@@ -35,8 +35,7 @@ UPDATE dylan.join_new_data SET new_areasymbol = LOWER('$new_areasymbol');
 
 -- get data + geometry for all SSURGO data within threshold distance of CA792
 -- note that for each polygon of CA792 there could be 1 or more corresponding SSURGO polygons
--- TODO: multiple instances of the same polygons in the table (why?): DISTINCT does not filter
--- ~ 4 minutes
+-- ~ 4-10 minutes
 DROP TABLE dylan.new_and_ssurgo;
 CREATE TABLE dylan.new_and_ssurgo AS
 SELECT join_new_data.musym as new_musym, new_areasymbol,

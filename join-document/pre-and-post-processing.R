@@ -1,5 +1,7 @@
 
 ## TODO: join ID hash should include left/right map unit symbols
+## TODO: save to folder with current date
+
 
 library(rgdal)
 library(sharpshootR)
